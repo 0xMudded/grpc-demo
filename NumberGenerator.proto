@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "github.com/0xMudded/grpc-demo/number-generator";
+
+message GenerateRequest {
+    int64 startRange = 1;
+    int64 endRange = 2;
+}
+
+message GenerateResponse {
+    int64 randomNumber = 1;
+}
+
+service NumberGenerator {
+    rpc Generate(GenerateRequest) returns (GenerateResponse);
+}
